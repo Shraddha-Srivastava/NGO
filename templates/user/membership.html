@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .plcholder{
+    font-size:21px;
+    }
+
+</style>
+<h1 class="text-center">Become a <i style="color:blue;">Member</i></h1>
+<center>
+    <div style="height:4px; width:150px; background:blue; border-radius:2px;"></div>
+    <p style="font-size:21px;"> Fill up your all details to get membership and help the needy.</p>
+</center>
+<div class="row">
+    <div class="col-sm-12 bg-light">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 mt-4 mb-4 p-4" style="background:white;">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4>Name :</h4>
+                    <input type="text" required name="name" class="form-control plcholder"
+                           placeholder="Enter your name"/> <br/>
+                    <h4>Date of Birth :</h4><input type="date" required name="dob" class="form-control plcholder"
+                                                   placeholder="Enter your DOB"/> <br/>
+                    <h4>Email :</h4><input type="email" required name="email" class="form-control plcholder"
+                                           placeholder="Enter your email"/> <br/>
+                    <h4>Gender :</h4> &nbsp; <div class="form-check form-check-inline">
+  <input class="form-check-input plcholder" required type="radio" name="gen" value="male">
+  <label class="form-check-label plcholder">Male</label>
+</div>
+ &nbsp;&nbsp;<div class="form-check form-check-inline">
+  <input class="form-check-input plcholder" required type="radio" name="gen" value="female">
+  <label class="form-check-label plcholder">Female</label>
+                </div>
+ &nbsp;&nbsp;<div class="form-check form-check-inline">
+  <input class="form-check-input plcholder" required type="radio" name="gen" value="others">
+  <label class="form-check-label plcholder">Others</label>
+</div>
+                    <br/>
+                    <br/>
+                    <h4>Contact No. :</h4><input type="text" required name="mobile" class="form-control plcholder"
+                                                 placeholder="Enter your phone no"/> <br/>
+                    <h4>Profession :</h4> <input type="text" required name="prof" class="form-control plcholder"
+                                                 placeholder="Enter your profession"/> <br/>
+                    <h4>City :</h4>
+                    <input name="cityname" type="text" class="form-control plcholder" placeholder="--Select--" list="list" autocomplete="off"/>
+                    <datalist id="list" class="plcholder">
+                        {% if city %}
+                        {% for x in city %}
+                        <option>{{x.cityname}}</option>
+                        {% endfor %}
+                        {% endif %}
+                    </datalist><br/>
+                    <h4>Picture :</h4><input type="file" name="fu" class="form-control plcholder"/>
+                    <h4>Address :</h4> <textarea class="form-control plcholder" required name="address" style="height:100px;" placeholder="Enter your Address..." aria-label="Address"></textarea><br/>
+                    <input type="submit" class="btn btn-primary btn-lg plcholder"/>
+                </form>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+<style>
+.form-control
+{
+margin-bottom:8px;
+}
+</style>
+{% block content %}
+<div class="row contact">
+    <div class="h2 text-center">Contact <b style="color:blue;">Us <i class="fa fa-phone text-dark"></i></b></div>
+    <center>
+    <div style="height:3px; width:100px; background:blue; border-radius:2px;"></div>
+    <p style="font-size:21px;">Fill the form to contact us by message.</p>
+    </center>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8" style="min-height:400px;">
+        <div class="row" style="background:white; margin-bottom:30px;">
+            {% if S %}
+                            <div class="alert alert-success">
+                                Thanks for Contacting Us, We will contact you soon...
+                            </div>
+            {% endif %}
+            <div class="col-sm-5">
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10 bg-light mt-4 mb-4"
+                         style="border:2px solid black; width:350px; height:400px; border-radius:2px;">
+                        <h5 class="mt-4 fw-bold mb-3"><u>Cont</u>act Info</h5>
+                        <b class="mt-2 text-dark" style="font-size:18px;"><i
+                                class="fa fa-map-marker text-dark fs-5 ms-3 "></i>&nbsp;&nbsp; Address</b><br/>
+                        <span class="ms-5" style="font-size:18px;">Abu Saray Road,Near <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OYO Star City Hotel <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sahadatganj,Ayodhya<br/>
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Uttar Pradesh 224001</span><br/>
+                        <b class="mt-2 text-dark" style="font-size:18px;"><i
+                                class="fa fa-phone text-dark fs-5 ms-3"
+                                style="border-radius:50%;"></i>&nbsp;&nbsp;Call Us</b><br/>
+                        <a href="tel:8303798383" class="ms-5 text-dark" style="text-decoration:none; font-size:19px;">
+                            +918303798383</a><br/>
+                        <a href="tel:9415746816" class="ms-5 text-dark" style="text-decoration:none; font-size:19px;">
+                            +919415746816</a><br/>
+                        <b class="mt-2 text-dark" style="font-size:18px;"><i
+                                class="fa fa-envelope-square text-dark fs-5 ms-3"
+                                style="border-radius:50%;"></i>&nbsp;&nbsp; Mail Us</b><br/>
+                        <a href="mail to:shraddhasri420@gmail.com" class="text-dark ms-5"
+                           style="text-decoration:none; font-size:19px;">shraddhasri420@gmail.com</a>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10 pt-3 ps-2 pe-2 mt-4 mb-2">
+                        <form method="post">
+                            {% csrf_token %}<!--cross site reforgery-->
+                            <h5>Name</h5>
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                <input type="text" name="name" required class="form-control" placeholder="Enter you Name..."
+                                       aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
+                            <h5>Mobile</h5>
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text"><i
+                                        class="fa fa-address-book"></i></span>
+                                <input type="text" name="mobile" required class="form-control" placeholder="Enter you Mobile No..."
+                                       aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
+                            <h5>Email</h5>
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                <input type="email" name="email" required class="form-control" placeholder="Enter you Email..."
+                                       aria-label="Email" aria-describedby="addon-wrapping">
+                            </div>
+                            <h5>Message</h5>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+ <textarea class="form-control" name="msg" placeholder="Message here..." aria-label="Message"></textarea>
+</div>
+                        <input type="submit" class="btn btn-primary btn-lg mt-4" value="Submit"/>
+                        </form>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+{% endblock %}

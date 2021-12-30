@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- start slider -->
+<div class="row slider">
+
+    <div class="col-sm-12 p-0">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'images/slider1.png'%}" style="max-height:600px;" class="d-block w-100"
+                         alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 style="color=black; font-weight:bold;">HELP NGO</h5>
+                        <p style="color:black; font-weight:bold;">Your help our Strength</p>
+                    </div>
+                </div>
+                {% if slider %}
+                {% for x in slider %}
+                <div class="carousel-item">
+                    <img src="/{{x.spic}}" style="max-height:600px;" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 style="color:black; font-weight:bold; font-size:30px;">{{x.stitle}}</h5>
+                        <p style="color:black; font-weight:bold;">{{x.sdes}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+</div>
+<!-- end slider -->
+<!-- start news -->
+<div class="row">
+    <div class="col-sm-12 alert alert-danger">
+        <marquee>
+            {% if d %}
+            {% for x in d%}
+            &nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'images/marquee.gif' %}"/>
+            {{x.news}}
+            {% endfor %}
+            {% endif %}
+        </marquee>
+    </div>
+</div>
+<!-- end news -->
+<!-- start mission -->
+<div class="row mission p-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="h2 text-center">OUR <b style="color:purple;">VISION</b> and <b style="color:blue;">MISSION</b></div>
+        <center>
+            <div style="height:4px; width:100px; background:blue; border-radius:2px;"></div>
+        </center>
+        <p style="text-align:center; font-size:21px;">
+            Building the dreams and shaping the lives of the Young at Risk for a just and humane society.</p>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="row m-3">
+                    <div class="col-sm-12 border p-2" style="min-width:200px;">
+                        <img src="{% static 'images/mission1.png'%}" style="min-width:180px;"
+                             class="img-thumbnail p-3"/>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="row m-3">
+                    <div class="col-sm-12 border p-2" style="min-width:200px;">
+                        <img src="{% static 'images/vision2.jpg'%}" style="min-width:180px;" class="img-thumbnail p-3"/>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="row m-3">
+                    <div class="col-sm-12 border p-2" style="min-width:200px;">
+                        <img src="{% static 'images/vision3.jpg'%}" style="min-width:180px;" class="img-thumbnail p-3"/>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="row m-3">
+                    <div class="col-sm-12 border p-2" style="min-width:200px;">
+                        <img src="{% static 'images/vision4.png'%}" style="min-width:180px;" class="img-thumbnail p-3"/>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="row m-3">
+                    <div class="col-sm-12 border p-2" style="min-width:200px;">
+                        <img src="{% static 'images/vision5.jpg'%}" style="min-width:180px;" class="img-thumbnail p-3"/>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="row m-3">
+                    <div class="col-sm-12 border p-2" style="min-width:200px;">
+                        <img src="{% static 'images/vision6.jpg'%}" style="min-width:180px;" class="img-thumbnail p-3"/>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+<!--  end mission -->
+<!-- start events -->
+<div class="row event py-2">
+    <div class="h2 text-center">OUR <b style="color:blue;">EVENTS</b></div>
+    <center>
+        <div style="height:4px; width:100px; background:blue; border-radius:2px;"></div>
+    </center>
+    <p style="text-align:center; font-size:21px;">
+        Provide positive environments that will prevent exploitation and neglect.</p>
+    <div class="row">
+        {% if event %}
+        {% for x in event %}
+        <div class="col-sm-3">
+            <div class="card">
+                <img src="/{{x.epic}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{x.city}}</h5>
+                    <p class="card-text">
+                        <b>{{x.etitle}}</b>
+                    <p>{{x.epurpose}}</p>
+                    <b class="btn btn-outline-primary">Special thanks to {{x.sthanks}}</b><br/><br/>
+                    <i class="text-muted">Event Date :{{x.edate}}</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+<!-- end events -->
+<!-- start upper to ufooter -->
+<div class="row volunteer mt-3">
+
+    <div class="col-sm-4 vol text-center">
+        <a href="/user/membership/" class="fw-bold fs-3 p-2" id="volunteer">Become a Volunteer</a>
+    </div>
+    <div class="col-sm-8 p-5">
+        <h3><b style="color:purple;">Help Us</b> to <b style="color:blue;">Help Child</b></h3>
+        <div style="display:flex; padding-left:5px;">
+            <div style="height:4px; width:10px; background:black;"></div>
+            <div style="height:4px; width:130px; background:blue; border-radius:2px;"></div>
+        </div>
+        <p style="font-size:21px;">Everyone has the right to one’s dignity and respect.</p>
+        <p style="font-size:22px; width:900px;">Our focus is generally on children who are at risk on the street and in
+            child labor. It extends its services to rag pickers, coolies, shoe shines, construction workers, street
+            vendors, parking boys, lottery ticket sellers, begging children, and other young at risk.They are assisted
+            to build up personal hygiene, proper dressing habits, and hale and hearty habits.
+    </div>
+</div>
+<!-- end upper to ufooter -->
+{% endblock %}

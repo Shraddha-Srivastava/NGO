@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="h2 text-center"><u>Our </u><span style="color:blue;">Events</span></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <p style="font-size:19px; font-weight:bold;">NGO events are organized with the intention of presenting what they have been working on (including important new research and findings), as well as their agenda and opinions. Participation and a clear understanding from the group of people attending are vital to the event’s success and donation/funding targets.</p>
+        <div class="row">
+            {% if event %}
+            {% for x in event %}
+            <div class="col-sm-4">
+                <div class="card">
+  <img src="/{{x.epic}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{x.city}}</h5>
+    <p class="card-text">
+        <b style="color:purple;">{{x.etitle}}</b>
+      <p>{{x.epurpose}}</p>
+      <b class="btn btn-outline-primary">Special thanks to {{x.sthanks}}</b><br/><br/>
+      <i class="text-muted">Event Date :{{x.edate}}</i>
+    </p>
+  </div>
+</div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock %}

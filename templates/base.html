@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"/>
+    <style>
+    .header
+    {
+    min-height:50px;
+    text-align:center;
+    border-top:1px solid blue;
+    }
+    .ic
+    {
+    border-radius:5px;
+    height:45px;
+    width:45px;
+    padding-top:10px;
+    }
+    .ic:hover
+    {
+    transition:all ease 2s;
+    transform:rotate(360deg);
+    }
+    .menu
+    {
+      background:radial-gradient(circle,blue,purple);
+    }
+    #menu ul li a
+    {
+    font-family:arial;
+    color:white;
+    }
+    .nav
+    {
+    color:white;
+    }
+    .nav:hover
+    {
+    background:radial-gradient(circle,blue,purple);
+    }
+    .mission
+    {
+    min-height:200px;
+    }
+    .event
+    {
+    min-height:500px;
+    background:white;
+    }
+    .ufooter
+    {
+    min-height:300px;
+    background:black;
+    }
+    .bfooter
+    {
+    min-height:45px;
+    background:radial-gradient(circle,blue,purple);
+    margin-top:1px;
+    }
+    .ufoot
+    {
+    color:white;
+    }
+    .ib
+    {
+    color:white;
+    border-radius:50%;
+    height:50px;
+    width:50px;
+    text-align:center;
+    padding-top:12px;
+    }
+    .roanc
+    {
+    text-decoration:none;
+    color:white;
+    }
+    .volunteer
+    {
+    min-height:300px;
+    }
+    #volunteer
+    {
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    color:blue;
+    border:5px solid purple;
+    border-radius:10px;
+    }
+    #volunteer:hover
+    {
+    color:white;
+    background:radial-gradient(circle,blue,purple);
+    transition:all ease 2s;
+    }
+    .vol
+    {
+    margin-top:200px;
+    }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <!-- start head -->
+    <div class="row header bg-light">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-3 fs-1 py-3">
+                    <i><b style="color:#800080;"> APSS</b><b style="color:blue;"> NGO</b></i> <i
+                        class="fa fa-globe fs-2"></i>
+                </div>
+                <div class="col-sm-6 fs-3 pt-4"><b>The foundation for Altruistic and Destitute </b></div>
+                <div class="col-sm-3 py-4">
+                    <a href="https://www.facebook.com/mansi.srivastava.9081323" target="_blank"><i class="fa fa-facebook fs-4 ic" style="color:blue; border:4px solid blue;"></i></a>
+                    <a href="https://twitter.com/Shraddhasri1101?s=08" target="_blank"><i class="fa fa-twitter fs-4 ic" style="color:blue; border:4px solid blue;"></i></a>
+                    <a href="https://youtube.com/channel/UCcqt-cspszktTGEtlSOMs3Q" target="_blank"><i class="fa fa-youtube fs-4 ic" style="color:red; border:4px solid red;"></i></a>
+                    <a href="http://api.whatsapp.com/send?phone=+918303798383" target="_blank"><i class="fa fa-whatsapp fs-4 ic" style="color:green; border:4px solid green;"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <!-- end head -->
+    <!-- start menu -->
+    <div class="row menu">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+            <nav class="navbar navbar-expand-lg navbar-dark" id="menu">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active fs-6" aria-current="page" href="/user/">
+                                    <i class="fa fa-home"></i>&nbsp;Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fs-6" href="/user/about/"><i class="fa fa-info"></i>&nbsp;About
+                                    Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fs-6" href="/user/contactus/"><i
+                                        class="fa fa-address-book"></i>&nbsp;Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fs-6" href="/user/donate/"><i class="fa fa-inr"></i>&nbsp;Donate
+                                    Now</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fs-6" href="/user/event/"><i class="fa fa-calendar"></i>&nbsp;Our
+                                    Event</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fs-6" href="/user/membership/"><i class="fa fa-users"></i>&nbsp;Membership</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fs-6" href="/user/gallery/"><i
+                                        class="fa fa-image"></i> Image Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fs-6" href="/user/videogallery/"><i
+                                        class="fa fa-image"></i> Video Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fs-6" href="/admin/"><i class="fa fa-sign-in"></i>&nbsp;Login</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+<!-- end menu -->
+<!--start content-->
+<div class="row content">
+    <div class="col-sm-12 bg-light" style="min-height:550px;">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+<!-- end content -->
+<!-- start ufooter -->
+<div class="row ufooter">
+    <div class="row">
+        <div class="col-sm-3 ufoot p-4">
+            <h3>Quick Links</h3>
+            <b><a href="/user/about/" class="roanc"><i>About Us</i></a> <br/>
+                <a href="/user/donate/" class="roanc"><i>Donate</i></a> <br/>
+                <a href="/user/membership/" class="roanc"><i>Membership</i></a> <br/>
+                <a href="/user/gallery/" class="roanc"><i>Image Gallery</i></a><br/></b>
+        </div>
+        <div class="col-sm-3 ufoot p-4">
+            <h3> Contact Address</h3>
+            <b><i>
+                <i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;SHANTI BHAWAN,<br/>
+                Near OYO Star City Hotel,Abu SARAY Road,Ayodhya<br/>
+                Uttar Pradesh 224001
+            </i></b><br/><br/>
+            <b><i><a href="tel:+91 8303798383" target="_blank" class="roanc"><i class="fa fa-phone fa-spin"></i>&nbsp;&nbsp;&nbsp;+91
+                8303798383 </a><br/>
+                <a href="tel:+91 9415746816" target="_blank" class="roanc"><i class="fa fa-phone fa-spin"></i>&nbsp;&nbsp;&nbsp;+91
+                    9415746816</a><br/>
+                <a href="tel:+91 8887635097" target="_blank" class="roanc"><i class="fa fa-phone fa-spin"></i>&nbsp;&nbsp;&nbsp;+91
+                    8887635097</a><br/>
+                <a href="mailto:shraddhasri420@gmail.com" target="_blank" class="roanc"><i class="fa fa-envelope "></i>&nbsp;&nbsp;&nbsp;shraddhasri420@gmail.com</a>
+            </i></b>
+        </div>
+        <div class="col-sm-3 ufoot p-4">
+            <h3>LEGAL</h3>
+            <b><i><a href="/user/termsconditions/" target="_blank" class="roanc">Terms & Conditions</a><br/>
+                <a href="/user/privacy/" target="_blank" class="roanc">Privacy Policy</a><br/>
+            </i></b>
+            <br/>
+            <br/>
+            <h3>HELP</h3>
+            <b><i><a href="#" class="roanc">Support</a><br/>
+                <a href="/user/contactus/" target="_blank" class="roanc">Contact Us</a><br/></i></b>
+        </div>
+        <div class="col-sm-3 ufoot p-4">
+            <h3>SOCIAL MEDIA</h3>
+            <a href="https://www.facebook.com/mansi.srivastava.9081323" target="_blank"><i
+                    class="fa fa-facebook fs-4 ib" style="background:blue;"></i></a>
+            <a href="https://twitter.com/Shraddhasri1101?s=08" target="_blank"><i class="fa fa-twitter fs-4 ib"
+                                                                                  style="background:skyblue;"></i></a>
+            <a href="https://youtube.com/channel/UCcqt-cspszktTGEtlSOMs3Q" target="_blank"> <i
+                    class="fa fa-youtube fs-4 ib" style="background:red;"></i></a>
+            <a href="http://api.whatsapp.com/send?phone=+918303798383" target="_blank"><i class="fa fa-whatsapp fs-4 ib"
+                                                                                          style="background:green;"></i></a>
+            <a href="https://www.instagram.com/the11_great08/" target="_blank"><i class="fa fa-instagram fs-4 ib"
+                                                                                  style="background:linear-gradient(40deg,yellow,#ee4b4f,purple);"></i></a>
+        </div>
+    </div>
+</div>
+<!-- end ufooter -->
+<!-- start bfooter -->
+<div class="row bfooter text-light text-center py-4 fs-4">
+    <div class="col-sm-6">Designed and Developed by :<b><i> MANSI SRIVASTAVA</i></b></div>
+    <div class="col-sm-6"><b>Copyright &copy; APSS NGO</b></div>
+</div>
+<!-- end bfooter -->
+</div>
+</body>
+</html>

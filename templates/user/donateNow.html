@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .plcholder{
+    font-size:21px;
+    }
+</style>
+<h1 class="text-center">Donate <i style="color:blue;">Now</i></h1>
+<center>
+    <div style="display:flex; padding-left:900px;">
+        <div style="height:3px; width:10px; background:black;"></div>
+        <div style="height:3px; width:100px; background:blue; border-radius:2px;"></div>
+    </div>
+    <p style="font-size:21px;"> Fill up your all details to get membership and help the needy.</p>
+</center>
+<div class="row">
+    <div class="col-sm-12 bg-light">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 mt-4 mb-5 p-4" style="background:white;">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4>Name :</h4>
+                    <input class="form-control" name="name" type="text" required placeholder="Enter Name..." aria-label="default input example"><br/>
+                    <h4>Email :</h4><input class="form-control" type="email" required name="email" placeholder="Enter email..." aria-label="default input example"><br/>
+                    <h4>Contact No. :</h4><input class="form-control" required type="number" name="mobile" placeholder="Enter Contact No..." aria-label="default input example"><br/>
+                    <h4>Occupation :</h4> <input class="form-control" required type="text" name="occupation" placeholder="Enter your Occupation..." aria-label="default input example"><br/>
+                    <h4>City :</h4>
+                    <input name="cityname" type="text" required class="form-control" list="list" autocomplete="off"/>
+                    <datalist id="list" class="plcholder">
+                        {% if city %}
+                        {% for x in city %}
+                        <option>{{x.cityname}}</option>
+                        {% endfor %}
+                        {% endif %}
+                    </datalist>
+                    <br/>
+                    <h4>Address :</h4><textarea class="form-control" required name="address" style="height:150px;" placeholder="Enter your Address..." aria-label="Address"></textarea><br/>
+                    <h4>Amount :</h4><input class="form-control" type="number" required name="amount" aria-label="default input example"> <br/>
+                    <input type="submit" class="btn btn-primary btn-lg mt-2" value="Submit"/>
+                </form>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
